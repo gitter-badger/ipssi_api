@@ -1,0 +1,9 @@
+.AppleDouble
+.DS_Store
+._*
+.project
+.settings
+.vagrant*
+www/projects-access.log
+www/projects-error.log
+www/application/bower_components
