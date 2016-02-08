@@ -5,6 +5,13 @@ echo 'Acquire::http {
     Proxy "http://192.168.1.253:9999";
 };' > /etc/apt/apt.conf.d/30proxy
 
+#
+# Add some repos
+#
+# MongoDB
+apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv EA312927
+echo "deb http://repo.mongodb.org/apt/ubuntu trusty/mongodb-org/3.2 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.2.list
+
 # Using Trusty64 Ubuntu
 rm /var/lib/apt/lists/* -f
 apt-get update
@@ -36,6 +43,11 @@ apt-get install -y apache2 libapache2-mod-php5
 #
 apt-get install -y php5 php5-cli php5-dev php-pear php5-mcrypt php5-curl php5-intl php5-xdebug php5-gd php5-imagick php5-imap php5-mhash php5-xsl
 php5enmod mcrypt intl curl
+
+#
+# MongoDB
+#
+sudo apt-get install -y mongodb-org
 
 # Update PECL channel
 pecl channel-update pecl.php.net
