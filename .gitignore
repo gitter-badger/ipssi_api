@@ -4,6 +4,6 @@
 .project
 .settings
 .vagrant*
-www/projects-access.log
-www/projects-error.log
-www/application/bower_components
+projects-access.log
+projects-error.log
+application/bower_components

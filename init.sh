@@ -41,30 +41,6 @@ php5enmod mcrypt intl curl
 pecl channel-update pecl.php.net
 
 #
-# Apc
-#
-apt-get -y install php-apc php5-apcu
-echo 'apc.enable_cli = 1' | tee -a /etc/php5/mods-available/apcu.ini > /dev/null
-
-#
-# Memcached
-#
-apt-get install -y memcached php5-memcached php5-memcache
-
-#
-# Beanstalkd
-#
-apt-get -y install beanstalkd
-
-#
-# YAML
-#
-apt-get install libyaml-dev
-(CFLAGS="-O1 -g3 -fno-strict-aliasing"; pecl install yaml < /dev/null &)
-echo 'extension = yaml.so' | tee /etc/php5/mods-available/yaml.ini > /dev/null
-php5enmod yaml
-
-#
 # Utilities
 #
 apt-get install -y curl htop git dos2unix unzip vim grc gcc make re2c libpcre3 libpcre3-dev lsb-core autoconf npm
