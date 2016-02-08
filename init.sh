@@ -48,7 +48,9 @@ apt-get install -y curl htop git dos2unix unzip vim grc gcc make re2c libpcre3 l
 #
 # Front-end Utilities
 #
-npm install -g bower yo grunt
+npm install -g bower
+npm install -g grunt-cli
+npm install -g yo
 ln -s /usr/bin/nodejs /usr/bin/node
 
 #
